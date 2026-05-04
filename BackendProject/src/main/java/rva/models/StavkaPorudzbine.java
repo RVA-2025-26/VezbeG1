@@ -12,24 +12,23 @@ import jakarta.persistence.SequenceGenerator;
 public class StavkaPorudzbine {
 
 	@Id
-	@SequenceGenerator(name = "stavka_porudzbine_seq", 
-	sequenceName = "stavka_porudzbine_seq", allocationSize = 1)
+	@SequenceGenerator(name = "stavka_porudzbine_seq", sequenceName = "stavka_porudzbine_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "stavka_porudzbine_seq")
 	private long id;
 	private int redniBroj;
 	private double kolicina;
 	private String jedinicaMere;
 	private double cena;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "artikl")
 	private Artikl artikl;
 	@ManyToOne
 	@JoinColumn(name = "porudzbina")
 	private Porudzbina porudzbina;
-	
+
 	public StavkaPorudzbine() {
-		
+
 	}
 
 	public StavkaPorudzbine(int redniBroj, double kolicina, String jedinicaMere, double cena) {
@@ -78,6 +77,22 @@ public class StavkaPorudzbine {
 
 	public void setCena(double cena) {
 		this.cena = cena;
+	}
+
+	public Artikl getArtikl() {
+		return artikl;
+	}
+
+	public void setArtikl(Artikl artikl) {
+		this.artikl = artikl;
+	}
+
+	public Porudzbina getPorudzbina() {
+		return porudzbina;
+	}
+
+	public void setPorudzbina(Porudzbina porudzbina) {
+		this.porudzbina = porudzbina;
 	}
 
 }

@@ -85,4 +85,14 @@ public class Porudzbina {
 		this.iznos = iznos;
 	}
 
+	public Dobavljac getDobavljac() {
+		return dobavljac;
+	}
+
+	public void setDobavljac(Dobavljac dobavljac) {
+		this.dobavljac = dobavljac;
+	}
+	
+	
+
 }
